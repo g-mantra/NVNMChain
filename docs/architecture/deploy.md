@@ -62,13 +62,14 @@ One-time process run by the genesis coordinator. Creates `genesis.json` and per-
 ```bash
 cargo run --profile maxperf -p tempo-xtask -- generate-genesis \
   --output /etc/tempo/genesis \
-  -a 50000 \                                    # genesis-funded accounts
-  --chain-id 42432 \                            # unique chain ID
-  --validators 10.0.0.1:8000,10.0.0.2:8000     # comma-separated validator P2P addrs
-  --t0-time 0 --t1-time ... --t8-time <TS>      # hardfork activation timestamps
-  --gas-limit 500000000                         # block gas limit
-  --epoch-length 302400                         # blocks per epoch (≈7d at 0.5s blocks)
-  --seed <SEED>                                 # deterministic key generation (dev only)
+  -a 50000 \
+  --chain-id 42432 \
+  --validators 10.0.0.1:8000,10.0.0.2:8000 \
+  --t0-time <TS0> --t1-time <TS1> --t2-time <TS2> --t3-time <TS3> \
+  --t4-time <TS4> --t5-time <TS5> --t6-time <TS6> --t7-time <TS7> --t8-time <TS8> \
+  --gas-limit 500000000 \
+  --epoch-length 302400 \
+  --seed <SEED>
 ```
 
 Output structure:
